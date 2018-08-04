@@ -1,7 +1,7 @@
 {
   "name": "@tleef/type-js",
-  "version": "1.0.0",
-  "main": "lib/",
+  "version": "1.1.0",
+  "main": "lib/type.js",
   "scripts": {
     "build": "babel src --out-dir lib",
     "lint": "standard \"src/**/*.js\"",
