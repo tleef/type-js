@@ -10,14 +10,20 @@ const isObject = (o) => {
   return typeof o === 'object' && !!o && !Array.isArray(o)
 }
 
+const isFunction = (o) => {
+  return typeof o === 'function'
+}
+
 export default {
   isString,
   isNumber,
-  isObject
+  isObject,
+  isFunction
 }
 
 export {
   isString,
   isNumber,
-  isObject
+  isObject,
+  isFunction
 }

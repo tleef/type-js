@@ -2,7 +2,7 @@
 
 import chai from 'chai'
 
-import type, { isString, isNumber, isObject } from './type'
+import type, { isString, isNumber, isObject, isFunction } from './type'
 
 const expect = chai.expect
 
@@ -96,6 +96,24 @@ describe('type', () => {
     })
   })
 
+  describe('isFunction()', () => {
+    it('should return true for function literal', () => {
+      expect(isFunction(function () {})).to.equal(true)
+    })
+
+    it('should return true for lambda literal', () => {
+      expect(isFunction(() => {})).to.equal(true)
+    })
+
+    it('should return true for Function', () => {
+      expect(isFunction(Function())).to.equal(true) // eslint-disable-line
+    })
+
+    it('should return true for new Function', () => {
+      expect(isFunction(new Function())).to.equal(true) // eslint-disable-line
+    })
+  })
+
   describe('#isString()', () => {
     it('should be equal to isString', () => {
       expect(type.isString).to.equal(isString)
@@ -111,6 +129,12 @@ describe('type', () => {
   describe('#isObject()', () => {
     it('should be equal to isObject', () => {
       expect(type.isObject).to.equal(isObject)
+    })
+  })
+
+  describe('#isFunction()', () => {
+    it('should be equal to isFunction', () => {
+      expect(type.isFunction).to.equal(isFunction)
     })
   })
 })
