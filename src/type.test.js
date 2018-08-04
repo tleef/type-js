@@ -2,7 +2,7 @@
 
 import chai from 'chai'
 
-import type, { isString, isNumber, isObject, isFunction } from './type'
+import type, { isString, isNumber, isObject, isFunction, isRegExp } from './type'
 
 const expect = chai.expect
 
@@ -114,6 +114,16 @@ describe('type', () => {
     })
   })
 
+  describe('isRegExp()', () => {
+    it('should return true for regexp literal', () => {
+      expect(isRegExp(/\w+/)).to.equal(true)
+    })
+
+    it('should return true for new RegExp', () => {
+      expect(isRegExp(new RegExp('\\w+'))).to.equal(true)
+    })
+  })
+
   describe('#isString()', () => {
     it('should be equal to isString', () => {
       expect(type.isString).to.equal(isString)
@@ -135,6 +145,12 @@ describe('type', () => {
   describe('#isFunction()', () => {
     it('should be equal to isFunction', () => {
       expect(type.isFunction).to.equal(isFunction)
+    })
+  })
+
+  describe('#isRegExp()', () => {
+    it('should be equal to isRegExp', () => {
+      expect(type.isRegExp).to.equal(isRegExp)
     })
   })
 })

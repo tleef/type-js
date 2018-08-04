@@ -14,16 +14,22 @@ const isFunction = (o) => {
   return typeof o === 'function'
 }
 
+const isRegExp = (o) => {
+  return o instanceof RegExp
+}
+
 export default {
   isString,
   isNumber,
   isObject,
-  isFunction
+  isFunction,
+  isRegExp
 }
 
 export {
   isString,
   isNumber,
   isObject,
-  isFunction
+  isFunction,
+  isRegExp
 }
