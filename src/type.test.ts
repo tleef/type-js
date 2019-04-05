@@ -56,7 +56,7 @@ describe("type", () => {
       expect(isInteger(123)).to.equal(true);
     });
 
-    it ('should return false for float', () => {
+    it("should return false for float", () => {
       expect(isInteger(123.000001)).to.equal(false);
     });
 
@@ -162,10 +162,12 @@ describe("type", () => {
 
     it("should return true for template literal", () => {
       expect(isString(`test ${1}`)).to.equal(true);
-      expect(isString(
+      expect(
+        isString(
           `test ${1}
-        test ${2}`,
-      )).to.equal(true);
+        test ${2}`
+        )
+      ).to.equal(true);
     });
 
     it("should return true for String", () => {
